@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <MenuBar fx:id="homeMenuBar" layoutX="121.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Home" />
+          <Menu mnemonicParsing="false" text="Games">
+            <items>
+              <MenuItem mnemonicParsing="false" text="View All" />
+                  <MenuItem mnemonicParsing="false" text="View Recommended" />
+                  <MenuItem mnemonicParsing="false" text="View Favorites" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Profile">
+            <items>
+              <MenuItem fx:id="homeToProfileButton" mnemonicParsing="false" onAction="#homeToProfile" text="View Profile" />
+                  <MenuItem fx:id="homeToLoginButton" mnemonicParsing="false" onAction="#homeToLogin" text="Logout" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
