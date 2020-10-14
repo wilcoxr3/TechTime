@@ -1,0 +1,4 @@
+//username, firstName, lastName, password,email,age, info, info, info
+admin,admin,admin,password,admin@gmail.com,100,random info, random info, random info
+Blighties,Ryan,Bulcher,password,rbulcher2@gmail.com,21,random info, random info, random info
+Jboy123,John,Meyers,1234,jboy123@gmail.com,25,random info, random info, random info
