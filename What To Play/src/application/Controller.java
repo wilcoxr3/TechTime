@@ -3,7 +3,6 @@ package application;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -21,10 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -82,7 +78,18 @@ public class Controller {
 				if (userCleared(username.getText(), password.getText())) {
 					//set the current user to get data for later on
 					
+					
 					Main.currentUser = users.get(username.getText());
+					
+					if(username.getText().equals("admin")) {
+						Parent loginParent = FXMLLoader.load(getClass().getResource("Admin.fxml"));
+						Scene home = new Scene(loginParent);
+
+						Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+						window.setScene(home);
+						window.show();
+						
+					}else {
 					
 					Parent loginParent = FXMLLoader.load(getClass().getResource("Home.fxml"));
 					Scene home = new Scene(loginParent);
@@ -90,7 +97,7 @@ public class Controller {
 					Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 					window.setScene(home);
 					window.show();
-					
+					}
 					
 
 				} else {
@@ -138,7 +145,7 @@ public class Controller {
 	
 	private void loadUsers() {
 		try {
-			File myObj = new File("src/Data/userDatabase.txt");
+			File myObj = new File("userDatabase.txt");
 			Scanner myReader = new Scanner(myObj);
 			myReader.nextLine();
 			while (myReader.hasNextLine()) {
@@ -374,7 +381,7 @@ public class Controller {
     
     @FXML
     private void initialize() {
-    	label.textProperty().bind(Bindings.format(label.getText() + " " + Main.currentUser.getFirstName()));
+    	label.textProperty().bind(Bindings.format("Welcome, "+ Main.currentUser.getFirstName()));
     	
     	profileUsername.promptTextProperty().set(Main.currentUser.getUsername());
     	
@@ -395,8 +402,11 @@ public class Controller {
     @FXML
     void updateInfo(ActionEvent event) {
     	
-    	boolean changedUser = false, changedPass = false, changedEmail = false, changedName = false, changedAge = false, change = false;
+    	boolean changedUser = false, changedPass = false, changedEmail = false, changedAge = false, change = false;
     	loadUsers();
+    	
+    	if(!(profileUsername.getText().isEmpty() && profileAge.getText().isEmpty() &&  profileEmail.getText().isEmpty() &&  profilePassword.getText().isEmpty() && profileName.getText().isEmpty())) {
+    	
     	if(!profileUsername.getText().isEmpty()) 
     		if(!users.containsKey(profileUsername.getText())) {
     			Main.currentUser.setUsername(profileUsername.getText());
@@ -422,7 +432,7 @@ public class Controller {
     		Main.currentUser.setEmail(profileEmail.getText());
     		changedEmail = true;
     		change = true;
-    	} else {
+    	} else if(!profileEmail.getText().isEmpty()){
     		Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error");
 			alert.setHeaderText("Invalid Email Address");
@@ -431,11 +441,11 @@ public class Controller {
 			alert.showAndWait();
     	}
     	
-    	if(profileAge.getText().length() >= 2 && !profileAge.getText().contains("[a-zA-Z+")) {
+    	if(!profileAge.getText().isEmpty() && profileAge.getText().length() >= 2 && !profileAge.getText().contains("[a-zA-Z+")) {
     		Main.currentUser.setAge(profileAge.getText());
     		changedAge = true;
     		change = true;
-    	} else {
+    	} else if(!profileAge.getText().isBlank()){
     		Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error");
 			alert.setHeaderText("Invalid Age");
@@ -479,7 +489,14 @@ public class Controller {
     		this.initialize();
     	}
     	
-    	
+    	}else {
+    		Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Warning");
+			alert.setHeaderText("Nothing Changed");
+			alert.setContentText("Please try again.");
+
+			alert.showAndWait();
+    	}
     	
     }
     
