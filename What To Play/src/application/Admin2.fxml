@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.adminController">
+   <children>
+      <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" layoutX="141.0" layoutY="90.0" prefHeight="400.0" prefWidth="600.0" text="What To Play" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button defaultButton="true" layoutX="40.0" layoutY="20.0" mnemonicParsing="false" onAction="#displayAdmin" text="Back">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Button>
+                  <GridPane layoutX="93.0" layoutY="91.0" prefHeight="504.0" prefWidth="449.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="353.0" minWidth="10.0" prefWidth="196.36900329589844" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="501.0" minWidth="10.0" prefWidth="208.63099670410156" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Is the game easy?">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FPS game?" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Simulation game?" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scary game?" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Racing game?" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Survival game?" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Party game?" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplayer game?" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time consuming?" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Challenging game?" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Graphical game?" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Free game?" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <GridPane GridPane.columnIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="gameEasyT" mnemonicParsing="false" text="Yes">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="gameEasy" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="gameEasyF" mnemonicParsing="false" text="No" toggleGroup="$gameEasy" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="fpsGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$fpsGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="simGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$simGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="scaryGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$scaryGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="raceGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$raceGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="survGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$survGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="partyGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$partyGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="multGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$multGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="timeGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$timeGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="challengeGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$challengeGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="10">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="graphicGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$graphicGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="11">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Yes">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="freeGame" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="No" toggleGroup="$freeGame" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+                  <Button defaultButton="true" layoutX="602.0" layoutY="540.0" mnemonicParsing="false" onAction="#saveGame" text="Save Game">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+        </content>
+         <font>
+            <Font size="26.0" />
+         </font>
+      </TitledPane>
+   </children>
+</AnchorPane>
