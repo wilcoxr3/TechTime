@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
@@ -13,6 +14,11 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
+                  <ImageView fitHeight="1000.0" fitWidth="820.0" layoutY="-133.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../background4.jpg" />
+                     </image>
+                  </ImageView>
                   <Text fontSmoothingType="LCD" layoutX="151.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lets get to know you!" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="242.59423828125">
                      <font>
                         <Font size="58.0" />
@@ -23,7 +29,7 @@
                         <Font size="36.0" />
                      </font>
                   </Button>
-                  <Button fx:id="backToQPage2" alignment="CENTER" defaultButton="true" layoutX="27.0" layoutY="40.0" mnemonicParsing="false" onAction="#displayQPage2" prefHeight="51.0" prefWidth="82.0" text="Back" textAlignment="CENTER">
+                  <Button fx:id="backToQPage2" alignment="CENTER" defaultButton="true" layoutX="27.0" layoutY="40.0" mnemonicParsing="false" onAction="#backToQPage2" prefHeight="51.0" prefWidth="82.0" text="Back" textAlignment="CENTER">
                      <font>
                         <Font size="23.0" />
                      </font>
@@ -74,13 +80,16 @@
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="racing" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton layoutX="10.0" layoutY="47.0" mnemonicParsing="false" text="No" GridPane.columnIndex="1">
+                              <RadioButton layoutX="10.0" layoutY="47.0" mnemonicParsing="false" text="No" toggleGroup="$racing" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
                               </RadioButton>
-                              <RadioButton layoutX="114.0" layoutY="47.0" mnemonicParsing="false" text="Not Sure" GridPane.columnIndex="2" />
+                              <RadioButton layoutX="114.0" layoutY="47.0" mnemonicParsing="false" text="Not Sure" toggleGroup="$racing" GridPane.columnIndex="2" />
                            </children>
                            <GridPane.margin>
                               <Insets />
@@ -92,13 +101,16 @@
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="survival" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton layoutX="10.0" layoutY="47.0" mnemonicParsing="false" text="No" GridPane.columnIndex="1">
+                              <RadioButton layoutX="10.0" layoutY="47.0" mnemonicParsing="false" text="No" toggleGroup="$survival" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
                               </RadioButton>
-                              <RadioButton layoutX="114.0" layoutY="47.0" mnemonicParsing="false" text="Not Sure" GridPane.columnIndex="2" />
+                              <RadioButton layoutX="114.0" layoutY="47.0" mnemonicParsing="false" text="Not Sure" toggleGroup="$survival" GridPane.columnIndex="2" />
                            </children>
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -115,13 +127,16 @@
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="party" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton layoutX="10.0" layoutY="47.0" mnemonicParsing="false" text="No" GridPane.columnIndex="1">
+                              <RadioButton layoutX="10.0" layoutY="47.0" mnemonicParsing="false" text="No" toggleGroup="$party" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
                               </RadioButton>
-                              <RadioButton layoutX="114.0" layoutY="47.0" mnemonicParsing="false" text="Not Sure" GridPane.columnIndex="2" />
+                              <RadioButton layoutX="114.0" layoutY="47.0" mnemonicParsing="false" text="Not Sure" toggleGroup="$party" GridPane.columnIndex="2" />
                            </children>
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -138,13 +153,16 @@
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="multiplayer" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton layoutX="10.0" layoutY="47.0" mnemonicParsing="false" text="No" GridPane.columnIndex="1">
+                              <RadioButton layoutX="10.0" layoutY="47.0" mnemonicParsing="false" text="No" toggleGroup="$multiplayer" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
                               </RadioButton>
-                              <RadioButton layoutX="114.0" layoutY="47.0" mnemonicParsing="false" text="Not Sure" GridPane.columnIndex="2" />
+                              <RadioButton layoutX="114.0" layoutY="47.0" mnemonicParsing="false" text="Not Sure" toggleGroup="$multiplayer" GridPane.columnIndex="2" />
                            </children>
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

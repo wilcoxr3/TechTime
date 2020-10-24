@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <ImageView fitHeight="775.0" fitWidth="807.0" layoutX="-1.0" layoutY="-5.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../background4.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar fx:id="homeMenuBar" layoutX="121.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Home">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#randomToHome" text="View Home" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Games">
+            <items>
+              <MenuItem mnemonicParsing="false" text="View All" />
+                  <MenuItem mnemonicParsing="false" text="View Recommended" />
+                  <MenuItem mnemonicParsing="false" text="View Favorites" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Profile">
+            <items>
+              <MenuItem fx:id="homeToProfileButton" mnemonicParsing="false" onAction="#homeToProfile" text="View Profile" />
+                  <MenuItem fx:id="homeToLoginButton" mnemonicParsing="false" onAction="#homeToLogin" text="Logout" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fitHeight="66.0" fitWidth="781.0" layoutX="89.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../WTP.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="106.0" fitWidth="238.0" layoutX="274.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../randomGameBG.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="152.0" layoutX="314.0" layoutY="568.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../spin.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="wheel" fitHeight="455.0" fitWidth="576.0" layoutX="94.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../wheel.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="286.0" layoutY="543.0" mnemonicParsing="false" onAction="#spinWheel" opacity="0.0" prefHeight="95.0" prefWidth="213.0" text="spinButton">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

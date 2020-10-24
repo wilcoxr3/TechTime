@@ -121,9 +121,9 @@ public class adminController {
 		imageLink3 = image3.getText();
 		gamePrice = price.getText();
 		
-		File gameData = new File("gameDataBase.txt");
+		File gameData = new File("gameDataBase.csv");
 		
-		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("gameDataBase.txt"), true));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("gameDataBase.csv"), true));
 		writer.newLine();
 		writer.write(title + "," + description + "," + imageLink1 + "," + imageLink2 + "," + imageLink3 + ","
 				+ gamePrice);
@@ -165,7 +165,7 @@ public class adminController {
 		a12 = getBool(freeGame);
 
 		System.out.println("uploading game to file");
-		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("gameDataBase.txt"), true));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("gameDataBase.csv"), true));
 		writer.write("," + a1 + "," + a2 + "," + a3 + "," + a4 + "," + a5 + "," + a6 + "," + a7 + "," + a8 + "," + a9 + ","
 				+ a10 + "," + a11 + "," + a12);
 		writer.close();
