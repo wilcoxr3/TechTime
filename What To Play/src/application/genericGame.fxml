@@ -68,8 +68,8 @@
         </rowConstraints>
          <children>
             <ImageView fx:id="imageOneLink" fitHeight="160.0" fitWidth="283.0" pickOnBounds="true" />
-            <ImageView fx:id="imageTwoLink" fitHeight="160.0" fitWidth="283.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-            <ImageView fx:id="imageThreeLink" fitHeight="160.0" fitWidth="283.0" layoutX="10.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+            <ImageView fx:id="imageTwoLink" fitHeight="160.0" fitWidth="283.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" GridPane.rowIndex="1" />
+            <ImageView fx:id="imageThreeLink" fitHeight="160.0" fitWidth="283.0" layoutX="10.0" layoutY="175.0" pickOnBounds="true" GridPane.rowIndex="2" />
             <ImageView fitHeight="164.0" fitWidth="286.0" pickOnBounds="true">
                <image>
                   <Image url="@../../frame.png" />

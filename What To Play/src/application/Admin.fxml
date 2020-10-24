@@ -62,7 +62,7 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <TextArea fx:id="gameDescription" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                              <TextArea fx:id="gameDescription" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
                                  </GridPane.margin>
