@@ -7,26 +7,31 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.adminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
       <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" layoutX="141.0" layoutY="90.0" prefHeight="400.0" prefWidth="600.0" text="What To Play" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Button defaultButton="true" layoutX="40.0" layoutY="20.0" mnemonicParsing="false" onAction="#displayLogin" text="Logout">
+                  <Label fx:id="label" layoutX="480.0" layoutY="25.0" prefHeight="39.0" prefWidth="305.0" text="Welcome,">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Button defaultButton="true" layoutX="25.0" layoutY="20.0" mnemonicParsing="false" onAction="#displayLogin" text="Logout">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Button>
-                  <GridPane gridLinesVisible="true" layoutX="124.0" layoutY="174.0" prefHeight="436.0" prefWidth="551.0">
+                  <GridPane gridLinesVisible="true" layoutX="40.0" layoutY="167.0" prefHeight="436.0" prefWidth="551.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.89288330078125" minWidth="10.0" prefWidth="351.9114990234375" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.6728820800781" minWidth="10.0" prefWidth="199.0885009765625" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints maxHeight="140.67288208007812" minHeight="10.0" prefHeight="50.11175537109375" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="243.55178833007812" minHeight="10.0" prefHeight="205.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="124.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="243.55178833007812" minHeight="10.0" prefHeight="240.88824462890625" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <GridPane>
@@ -42,13 +47,10 @@
                                  <font>
                                     <Font size="26.0" />
                                  </font>
-                                 <GridPane.margin>
-                                    <Insets left="5.0" />
-                                 </GridPane.margin>
                               </Text>
-                              <TextField fx:id="gameTitle" GridPane.columnIndex="1">
+                              <TextField GridPane.columnIndex="1">
                                  <GridPane.margin>
-                                    <Insets left="5.0" right="20.0" />
+                                    <Insets right="5.0" />
                                  </GridPane.margin>
                               </TextField>
                            </children>
@@ -62,16 +64,16 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <TextArea fx:id="gameDescription" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                              <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                  <GridPane.margin>
-                                    <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </GridPane.margin>
                               </TextArea>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <Text layoutX="39.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game">
+                                    <Text layoutX="15.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game">
                                        <font>
-                                          <Font size="20.0" />
+                                          <Font size="41.0" />
                                        </font>
                                     </Text>
                                     <Text layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:">
@@ -83,93 +85,18 @@
                               </AnchorPane>
                            </children>
                         </GridPane>
-                        <GridPane GridPane.rowIndex="2">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="83.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.0" minWidth="10.0" prefWidth="268.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image Link 1:">
-                                 <GridPane.margin>
-                                    <Insets left="5.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image Link 2:" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="5.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image Link 3:" GridPane.rowIndex="2">
-                                 <GridPane.margin>
-                                    <Insets left="5.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <TextField fx:id="image1" GridPane.columnIndex="1">
-                                 <GridPane.margin>
-                                    <Insets bottom="2.0" left="10.0" right="20.0" top="2.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <TextField fx:id="image2" layoutX="115.0" layoutY="7.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets bottom="2.0" left="10.0" right="20.0" top="2.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <TextField fx:id="image3" layoutX="115.0" layoutY="35.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                 <GridPane.margin>
-                                    <Insets bottom="2.0" left="10.0" right="20.0" top="2.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                           </children>
-                        </GridPane>
-                        <GridPane GridPane.columnIndex="1">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="90.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="110.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price:">
-                                 <font>
-                                    <Font size="34.0" />
-                                 </font>
-                                 <GridPane.margin>
-                                    <Insets left="5.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <TextField fx:id="price" promptText="0.00 usd" GridPane.columnIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                           </children>
-                        </GridPane>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Text>
-                        <Button fx:id="adminToAdmin2" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#nextPageAdmin" prefHeight="90.0" prefWidth="162.0" text="Next Page" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets left="20.0" />
-                           </GridPane.margin>
-                        </Button>
                      </children>
                   </GridPane>
-                  <Text layoutX="269.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Game Entry:">
+                  <Text layoutX="185.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Game Entry:">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Text>
+                  <Button defaultButton="true" layoutX="611.0" layoutY="333.0" mnemonicParsing="false" onAction="#displayLogin" prefHeight="90.0" prefWidth="162.0" text="Save Game">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Button>
                </children></AnchorPane>
         </content>
          <font>

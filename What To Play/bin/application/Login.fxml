@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
@@ -15,43 +13,25 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="796.0" fitWidth="807.0" layoutY="-36.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../../background4.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="119.0" fitWidth="347.0" layoutX="286.0" layoutY="424.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../login.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="380.0" fitWidth="429.0" layoutX="-128.0" layoutY="167.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../../tree.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="312.0" fitWidth="328.0" layoutX="570.0" layoutY="226.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../../tree2.png" />
-                     </image>
-                  </ImageView>
-                  <Text fontSmoothingType="LCD" layoutX="173.0" layoutY="210.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Login or Create Account">
+                  <Text fontSmoothingType="LCD" layoutX="174.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login or Create Account" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="147.8955078125">
                      <font>
-                        <Font name="Bradley Hand Bold" size="47.0" />
+                        <Font size="47.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="557.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up :" wrappingWidth="84.97900390625">
+                  <Text layoutX="557.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up :" wrappingWidth="84.97900390625">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Text>
-                  <GridPane layoutX="170.0" layoutY="227.0" prefHeight="218.0" prefWidth="487.0">
+                  <Button fx:id="createAccButton" alignment="CENTER" defaultButton="true" layoutX="636.0" layoutY="586.0" mnemonicParsing="false" onAction="#displayQPage0" text="Create Account" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <GridPane layoutX="203.0" layoutY="218.0" prefHeight="223.0" prefWidth="469.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.06820678710938" minWidth="10.0" prefWidth="188.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.0" minWidth="10.0" prefWidth="299.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.06820678710938" minWidth="10.0" prefWidth="179.51751708984375" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.6471862792969" minWidth="10.0" prefWidth="289.48248291015625" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -60,12 +40,12 @@
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username :">
                            <font>
-                              <Font name="Bradley Hand Bold" size="35.0" />
+                              <Font size="35.0" />
                            </font>
                         </Text>
                         <Text layoutX="10.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :" GridPane.rowIndex="1">
                            <font>
-                              <Font name="Bradley Hand Bold" size="35.0" />
+                              <Font size="35.0" />
                            </font>
                         </Text>
                         <PasswordField fx:id="password" promptText="password" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -78,29 +58,11 @@
                               <Font size="25.0" />
                            </font>
                         </TextField>
-                        <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                           <image>
-                              <Image url="@../../lock.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                           <image>
-                              <Image url="@../../username.png" />
-                           </image>
-                        </ImageView>
                      </children>
                   </GridPane>
-                  <Button fx:id="loginBtn" defaultButton="true" layoutX="290.0" layoutY="430.0" mnemonicParsing="false" onAction="#displayHome" opacity="0.0" prefHeight="109.0" prefWidth="271.0" text="Login">
+                  <Button fx:id="loginBtn" defaultButton="true" layoutX="354.0" layoutY="449.0" mnemonicParsing="false" onAction="#displayHome" text="Login">
                      <font>
                         <Font size="37.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button fx:id="createAccButton" alignment="CENTER" defaultButton="true" layoutX="636.0" layoutY="586.0" mnemonicParsing="false" onAction="#displayQPage0" text="Create Account" textAlignment="CENTER">
-                     <font>
-                        <Font size="14.0" />
                      </font>
                   </Button>
                </children>
