@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" layoutX="141.0" layoutY="90.0" prefHeight="400.0" prefWidth="600.0" text="What To Play" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" focusTraversable="false" layoutX="141.0" layoutY="90.0" prefHeight="400.0" prefWidth="600.0" text="What To Play" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -58,6 +58,11 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
+                        <TextField fx:id="username" promptText="username" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </TextField>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username :">
                            <font>
                               <Font name="Bradley Hand Bold" size="35.0" />
@@ -73,11 +78,6 @@
                               <Font size="25.0" />
                            </font>
                         </PasswordField>
-                        <TextField fx:id="username" promptText="username" GridPane.columnIndex="1">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </TextField>
                         <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                            <image>
                               <Image url="@../../lock.png" />
@@ -90,7 +90,7 @@
                         </ImageView>
                      </children>
                   </GridPane>
-                  <Button fx:id="loginBtn" defaultButton="true" layoutX="290.0" layoutY="430.0" mnemonicParsing="false" onAction="#displayHome" opacity="0.0" prefHeight="109.0" prefWidth="271.0" text="Login">
+                  <Button fx:id="loginBtn" defaultButton="true" focusTraversable="false" layoutX="290.0" layoutY="430.0" mnemonicParsing="false" onAction="#displayHome" opacity="0.0" prefHeight="109.0" prefWidth="271.0" text="Login">
                      <font>
                         <Font size="37.0" />
                      </font>
@@ -98,7 +98,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="createAccButton" alignment="CENTER" defaultButton="true" layoutX="636.0" layoutY="586.0" mnemonicParsing="false" onAction="#displayQPage0" text="Create Account" textAlignment="CENTER">
+                  <Button fx:id="createAccButton" alignment="CENTER" defaultButton="true" focusTraversable="false" layoutX="636.0" layoutY="586.0" mnemonicParsing="false" onAction="#displayQPage0" text="Create Account" textAlignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>

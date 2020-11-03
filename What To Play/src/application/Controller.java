@@ -1,18 +1,14 @@
 package application;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.Scanner;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
@@ -44,10 +40,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -131,12 +123,24 @@ public class Controller {
 	@FXML
 	private TableView<Game> tableView = new TableView<>();
 	@FXML
+	private TableView<Game> tableViewFavorites = new TableView<>();
+	@FXML
 	private TableColumn<String, String> gameTitle = new TableColumn<>();
+
+	@FXML
+	private TableColumn<String, String> gameTitleFavorites = new TableColumn<>();
 
 	@FXML
 	private TableColumn<String, String> gamePrice = new TableColumn<>();
 
+	@FXML
+	private TableColumn<String, String> gamePriceFavorites = new TableColumn<>();
+
 	private final ObservableList<Game> dataList = FXCollections.observableArrayList();
+
+	private final ObservableList<Game> dataListFavorites = FXCollections.observableArrayList();
+
+	private ArrayList<String> titles = new ArrayList<>();
 
 	@FXML
 	private TextField filterField = new TextField();
@@ -233,6 +237,25 @@ public class Controller {
 			myReader.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Error with userDataBase");
+			e.printStackTrace();
+		}
+		loadUsersFavorites();
+	}
+
+	private void loadUsersFavorites() {
+		try {
+			File myObj = new File("userFavoriteDatabase.txt");
+			Scanner myReader = new Scanner(myObj);
+			myReader.nextLine();
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				String[] userData = data.split(",");
+				for (int i = 1; i < userData.length; i++)
+					users.get(userData[0]).getFavorites().put(userData[i], loadedGames.get(userData[i]));
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("Error with userFavoriteDataBase");
 			e.printStackTrace();
 		}
 	}
@@ -494,22 +517,39 @@ public class Controller {
 	@FXML
 	private ImageView wheel = new ImageView();
 
-	private Game current = new Game();
-
-	// CONTROL table view clicks here
+	// CONTROL table view home page clicks here
 	@FXML
 	public void clickItem(MouseEvent event) throws IOException {
 		if (event.getClickCount() == 2) // Checking double click
 		{
-			Main.currentGame = loadedGames.get(tableView.getSelectionModel().getSelectedItem().getName());
+			if (tableView.getId() != null) {
+				if (tableView.getSelectionModel().getSelectedItem() != null) {
+					Main.currentGame = loadedGames.get(tableView.getSelectionModel().getSelectedItem().getName());
+					Parent CreateScene = FXMLLoader.load(getClass().getResource("genericGame.fxml"));
+					Scene scene = new Scene(CreateScene);
 
-			Parent CreateScene = FXMLLoader.load(getClass().getResource("genericGame.fxml"));
-			Scene scene = new Scene(CreateScene);
+					Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+					window.setScene(scene);
+					window.show();
 
-			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			window.setScene(scene);
-			window.show();
+				} else {
+					System.out.println("No game2");
+				}
+			} else {
+				if (tableViewFavorites.getSelectionModel().getSelectedItem() != null) {
+					Main.currentGame = loadedGames
+							.get(tableViewFavorites.getSelectionModel().getSelectedItem().getName());
+					Parent CreateScene = FXMLLoader.load(getClass().getResource("genericGameFavorite.fxml"));
+					Scene scene = new Scene(CreateScene);
 
+					Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+					window.setScene(scene);
+					window.show();
+				} else {
+					System.out.println("No game1");
+				}
+			}
+			
 		}
 	}
 
@@ -523,10 +563,11 @@ public class Controller {
 
 	@FXML
 	private Label genericTitle = new Label();
-	
 	@FXML
-    private TextArea descriptionText = new TextArea();
-	
+	private Label genericPrice = new Label();
+
+	@FXML
+	private TextArea descriptionText = new TextArea();
 
 	@FXML
 	private void initialize() {
@@ -545,10 +586,18 @@ public class Controller {
 		gameTitle.setCellValueFactory(new PropertyValueFactory<>("name"));
 		gamePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
+		gameTitleFavorites.setCellValueFactory(new PropertyValueFactory<>("name"));
+		gamePriceFavorites.setCellValueFactory(new PropertyValueFactory<>("price"));
+
 		ArrayList<Game> games = loadGames();
 		for (Game g : games) {
 			dataList.add(g);
 			loadedGames.put(g.getName(), g);
+			titles.add(g.getName());
+		}
+
+		for (Game g : Main.currentUser.getFavorites().values()) {
+			dataListFavorites.add(g);
 		}
 
 		FilteredList<Game> filteredData = new FilteredList<>(dataList, b -> true);
@@ -573,21 +622,47 @@ public class Controller {
 			});
 		});
 
+		FilteredList<Game> filteredDataFavorites = new FilteredList<>(dataListFavorites, b -> true);
+
+		filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+			filteredDataFavorites.setPredicate(game -> {
+				// If filter text is empty, display all persons.
+
+				if (newValue == null || newValue.isEmpty()) {
+					return true;
+				}
+
+				// Compare first name and last name of every person with filter text.
+				String lowerCaseFilter = newValue.toLowerCase();
+
+				if (game.getName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					return true; // Filter matches first name.
+				} else if (game.getPrice().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					return true; // Filter matches last name.
+				} else
+					return false; // Does not match.
+			});
+		});
+
 		// 3. Wrap the FilteredList in a SortedList.
 		SortedList<Game> sortedData = new SortedList<>(filteredData);
+
+		SortedList<Game> sortedDataFavorites = new SortedList<>(filteredDataFavorites);
 
 		// 4. Bind the SortedList comparator to the TableView comparator.
 		// Otherwise, sorting the TableView would have no effect.
 		sortedData.comparatorProperty().bind(tableView.comparatorProperty());
+		sortedDataFavorites.comparatorProperty().bind(tableViewFavorites.comparatorProperty());
 
 		// 5. Add sorted (and filtered) data to the table.
 		tableView.setItems(sortedData);
+		tableViewFavorites.setItems(sortedDataFavorites);
 
 		genericTitle.textProperty().bind(Bindings.format("" + Main.currentGame.getName()));
+		genericPrice.textProperty().bind(Bindings.format("" + Main.currentGame.getPrice()));
 		String url1 = Main.currentGame.getImage1();
 		String url2 = Main.currentGame.getImage2();
 		String url3 = Main.currentGame.getImage3();
-
 		if (url1 != null || url2 != null || url3 != null) {
 			if (!url1.equals("Image 1")) {
 				Image image1 = new Image(url1, true);
@@ -599,32 +674,46 @@ public class Controller {
 			if (!url2.equals("Image 2")) {
 				Image image2 = new Image(url2, true);
 				imageTwoLink.setImage(image2);
-			}else {
+			} else {
 				Image image2 = new Image("https://picsum.photos/350/200", true);
 				imageTwoLink.setImage(image2);
 			}
 			if (!url3.equals("Image 3")) {
 				Image image3 = new Image(url3, true);
 				imageThreeLink.setImage(image3);
-			}else {
+			} else {
 				Image image3 = new Image("https://picsum.photos/350/200", true);
 				imageThreeLink.setImage(image3);
 			}
 		}
-		
-		
-		
-		if(Main.currentGame.getDescription() != null) {
-			
-			descriptionText.setText(Main.currentGame.getDescription());	
+
+		if (Main.currentGame.getDescription() != null) {
+
+			descriptionText.setText(Main.currentGame.getDescription());
 		}
-		
+
+		if (claimButton != null) {
+			claimText.setOpacity(0);
+			claimBanner.setOpacity(0);
+		}
+
 	}
-	
-	
+
+	@FXML
+	private Button claimButton = new Button();
+
+	@FXML
+	private ImageView claimText = new ImageView();
+
+	@FXML
+	private ImageView claimBanner = new ImageView();
 
 	@FXML
 	void spinWheel(ActionEvent event) {
+		if (claimButton != null) {
+			claimText.setOpacity(0);
+			claimBanner.setOpacity(0);
+		}
 
 		// wheel.setRotate(wheel.getRotate() + 90);
 		int time = (int) (Math.random() * (4000 - 2000 + 1) + 2000);
@@ -638,6 +727,10 @@ public class Controller {
 			@Override
 			public void run() {
 				rt.stop();
+				if (claimButton != null) {
+					claimText.setOpacity(1);
+					claimBanner.setOpacity(1);
+				}
 
 			}
 		}, time);
@@ -834,6 +927,88 @@ public class Controller {
 
 		return false;
 
+	}
+
+	@FXML
+	void claimRandomGame(ActionEvent event) throws IOException {
+		// select random current game
+		Random r = new Random();
+		String randomTitle = titles.get(r.nextInt(titles.size()));
+
+		Main.currentGame = loadedGames.get(randomTitle);
+
+		Parent CreateScene = FXMLLoader.load(getClass().getResource("genericGame.fxml"));
+		Scene scene = new Scene(CreateScene);
+
+		Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		window.setScene(scene);
+		window.show();
+	}
+
+	@FXML
+	void addGameToFavorite(ActionEvent event) throws IOException {
+		boolean added = false;
+		if (Main.currentUser.getFavorites().containsKey(Main.currentGame.getName())) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("No Game Added");
+			alert.setHeaderText("Game already a favorite!");
+			alert.setContentText("Title:   " + Main.currentGame.getName());
+			alert.showAndWait();
+		} else {
+
+			File myObj = new File("userFavoriteDatabase.txt");
+			Scanner myReader = new Scanner(myObj);
+			myReader.nextLine();
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				String[] userData = data.split(",");
+				System.out.println(userData[0]);
+				if (userData[0].equals(Main.currentUser.getUsername())) {
+					BufferedWriter writer = new BufferedWriter(
+							new FileWriter(new File("userFavoriteDatabase.txt"), true));
+
+					writer.write("," + Main.currentGame.getName());
+					writer.close();
+					added = true;
+					
+					Main.currentUser.getFavorites().put(Main.currentGame.getName(), Main.currentGame);
+					Alert alert = new Alert(AlertType.WARNING);
+					alert.setTitle("Added");
+					alert.setHeaderText("Added game to profile favorites!");
+					alert.setContentText("Title:   " + Main.currentGame.getName());
+					alert.showAndWait();
+					break;
+				}
+			}
+			if(!added) {
+			BufferedWriter writer = new BufferedWriter(
+					new FileWriter(new File("userFavoriteDatabase.txt"), true));
+			writer.newLine();
+			writer.write(Main.currentUser.getUsername() + "," + Main.currentGame.getName());
+			writer.close();
+			myReader.close();
+			Main.currentUser.getFavorites().put(Main.currentGame.getName(), Main.currentGame);
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Added");
+			alert.setHeaderText("Added game to profile favorites!");
+			alert.setContentText("Title:   " + Main.currentGame.getName());
+			alert.showAndWait();
+			}
+
+			
+		}
+	}
+
+	@FXML
+	void showUserFavorites(ActionEvent event) throws IOException {
+
+		Parent CreateScene = FXMLLoader.load(getClass().getResource("Favorites.fxml"));
+
+		Scene scene = new Scene(CreateScene);
+
+		Stage window = (Stage) homeMenuBar.getScene().getWindow();
+		window.setScene(scene);
+		window.show();
 	}
 
 }

@@ -11,19 +11,22 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <ImageView fitHeight="775.0" fitWidth="807.0" layoutX="-1.0" layoutY="-5.0" pickOnBounds="true">
+      <ImageView fx:id="favorite" fitHeight="775.0" fitWidth="807.0" layoutX="-1.0" layoutY="-5.0" pickOnBounds="true">
          <image>
             <Image url="@../../background4.jpg" />
          </image>
       </ImageView>
       <MenuBar fx:id="homeMenuBar" layoutX="121.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Home" />
+          <Menu mnemonicParsing="false" text="Home">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#randomToHome" text="Go Home" />
+               </items></Menu>
           <Menu mnemonicParsing="false" text="Games">
             <items>
               <MenuItem mnemonicParsing="false" text="View All" />
                   <MenuItem mnemonicParsing="false" text="View Recommended" />
-                  <MenuItem mnemonicParsing="false" text="View Favorites" />
+                  <MenuItem mnemonicParsing="false" onAction="#showUserFavorites" text="View Favorites" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Profile">
@@ -110,9 +113,50 @@
             <Font name="Bradley Hand Bold" size="40.0" />
          </font>
       </Text>
-      <TextArea fx:id="descriptionText" editable="false" layoutX="440.0" layoutY="268.0" prefHeight="279.0" prefWidth="254.0" wrapText="true">
+      <TextArea fx:id="descriptionText" editable="false" layoutX="440.0" layoutY="294.0" prefHeight="279.0" prefWidth="254.0" wrapText="true">
          <effect>
             <InnerShadow />
          </effect></TextArea>
+      <ImageView fitHeight="104.0" fitWidth="193.0" layoutX="340.0" layoutY="591.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../randomGameBG.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="414.0" layoutY="600.0" text="Price" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="genericPrice" alignment="CENTER" layoutX="408.0" layoutY="630.0" prefHeight="26.0" prefWidth="58.0" text="Generic Price">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="393.0" layoutY="628.0" text="\$">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="92.0" fitWidth="94.0" layoutX="645.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../star.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="455.0" layoutY="44.0" prefHeight="49.0" prefWidth="228.0" text="Add Favorite">
+         <font>
+            <Font name="Bradley Hand Bold" size="35.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Label>
+      <Button layoutX="454.0" layoutY="34.0" mnemonicParsing="false" onAction="#addGameToFavorite" opacity="0.0" prefHeight="67.0" prefWidth="275.0" text="favorite">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,0 +1,2 @@
+//username,favorites
+Blighties,Super Mario 64 DS,Lumines: Puzzle Fusion,WarioWare Touched!,Spider-Man 2,Hotel Dusk: Room 215,Pokemon Red GB

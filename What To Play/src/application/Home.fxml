@@ -23,7 +23,7 @@
             <items>
               <MenuItem mnemonicParsing="false" text="View All" />
                   <MenuItem mnemonicParsing="false" text="View Recommended" />
-                  <MenuItem mnemonicParsing="false" text="View Favorites" />
+                  <MenuItem mnemonicParsing="false" onAction="#showUserFavorites" text="View Favorites" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Profile">

@@ -60,10 +60,54 @@
       </ImageView>
       <ImageView fx:id="wheel" fitHeight="455.0" fitWidth="576.0" layoutX="94.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../wheel.png" />
+            <Image url="@../../wheel2.png" />
          </image>
       </ImageView>
       <Button layoutX="286.0" layoutY="543.0" mnemonicParsing="false" onAction="#spinWheel" opacity="0.0" prefHeight="95.0" prefWidth="213.0" text="spinButton">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="73.0" fitWidth="190.0" layoutY="210.0" opacity="0.74" pickOnBounds="true">
+         <image>
+            <Image url="@../../ryanBorder.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="86.0" fitWidth="195.0" layoutY="205.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../frame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="123.0" fitWidth="121.0" layoutX="76.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../arrow.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="226.0" prefHeight="42.0" prefWidth="195.0" text="Win a game!">
+         <font>
+            <Font name="Bradley Hand Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="claimText" fitHeight="71.0" fitWidth="148.0" layoutX="190.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+         <image>
+            <Image url="@../../randomGameBG.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="claimBanner" fitHeight="28.0" fitWidth="95.0" layoutX="215.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../claim.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </ImageView>
+      <Button fx:id="claimButton" defaultButton="true" layoutX="204.0" layoutY="300.0" mnemonicParsing="false" onAction="#claimRandomGame" opacity="0.0" prefHeight="58.0" prefWidth="118.0" text="Claim!">
+         <font>
+            <Font name="Baloo Tamma Regular" size="24.0" />
+         </font>
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>

@@ -90,7 +90,7 @@
             </ImageView>
          </children>
       </GridPane>
-      <Button defaultButton="true" layoutX="624.0" layoutY="618.0" mnemonicParsing="false" onAction="#randomToHome" text="Home">
+      <Button defaultButton="true" layoutX="624.0" layoutY="618.0" mnemonicParsing="false" onAction="#showUserFavorites" text="Back">
          <font>
             <Font size="30.0" />
          </font>
@@ -113,7 +113,7 @@
             <Font name="Bradley Hand Bold" size="40.0" />
          </font>
       </Text>
-      <TextArea fx:id="descriptionText" editable="false" layoutX="440.0" layoutY="294.0" prefHeight="279.0" prefWidth="254.0" wrapText="true">
+      <TextArea fx:id="descriptionText" editable="false" layoutX="440.0" layoutY="268.0" prefHeight="279.0" prefWidth="254.0" wrapText="true">
          <effect>
             <InnerShadow />
          </effect></TextArea>

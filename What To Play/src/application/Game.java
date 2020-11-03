@@ -25,6 +25,24 @@ public class Game {
 		this.a12 = a12;
 	}
 	public Game() {
+		this.name = "";
+		this.description = "";
+		this.image1 = null;
+		this.image2  = null;
+		this.image3 = null;
+		this.price = "";
+		this.a1  = "";
+		this.a2 = "";
+		this.a3  = "";
+		this.a4  = "";
+		this.a5  = "";
+		this.a6  = "";
+		this.a7  = "";
+		this.a8  = "";
+		this.a9  = "";
+		this.a10  = "";
+		this.a11  = "";
+		this.a12  = "";
 	}
 	private String name, description, image1, image2, image3, price;
 	private String a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12;
