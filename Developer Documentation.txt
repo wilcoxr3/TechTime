@@ -1,0 +1,32 @@
+﻿TechTime’s What to Play
+
+
+This application was created for users to search or browse an extensive catalog of games in order to find something new to play. It allows the user to select which games they like to add to their favorites list after logging in, as well as search for specific types of games or a random one determined by the application. This Documentation will give brief descriptions of the various associated .java files and what they do. All included .fxml files are what the .java files use to build the different screens that the user sees, and all code within them is for aesthetic purposes.
+
+
+Controller.java: 
+* Loads the various screens the application uses, as well as builds account information based on inputs given from the user
+* Handles Wheel of Random Game feature by spinning wheel and communicating with Random.fxml to find a random game from the database to return to the user, which they can then claim
+* Manages click events to open a game’s page or favorite a game
+* Handles user Updating Account Information (changing password, email, etc.) by altering the Users data within the userDatabase.txt file
+* Runs the changes the User makes to their favorites list by adding or removing them
+
+
+Main.java: 
+* Launches the application using the arguments
+* Sets the current User empty for login purposes
+* Determines the location on screen that the application will occupy
+
+
+adminController.java: 
+* Used by Admins to build a Game object that is then stored in the gameDataBase.csv file
+
+
+User.java: 
+* Creates the User objects stored into the userDatabase.txt file, using data given by the user when creating an account
+* Takes the user’s first and last name, their unique username and password, and age to build the account information\
+* Associates that account with a Hashmap containing that specific user’s favorites list
+
+
+Game.java:
+* Holds the constructor used to build the Game objects added by adminController.java
