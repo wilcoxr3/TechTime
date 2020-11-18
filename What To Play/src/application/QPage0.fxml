@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
@@ -14,11 +13,6 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="819.0" fitWidth="807.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../../background4.jpg" />
-                     </image>
-                  </ImageView>
                   <Text fontSmoothingType="LCD" layoutX="151.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lets get to know you!" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="242.59423828125">
                      <font>
                         <Font size="58.0" />
@@ -66,22 +60,10 @@
                               <Font size="29.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="newUserFirstName" GridPane.columnIndex="1">
-                           <effect>
-                              <InnerShadow />
-                           </effect></TextField>
-                        <TextField fx:id="newUserLastName" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <effect>
-                              <InnerShadow />
-                           </effect></TextField>
-                        <TextField fx:id="newUserEmail" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <effect>
-                              <InnerShadow />
-                           </effect></TextField>
-                        <TextField fx:id="newUserAge" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                           <effect>
-                              <InnerShadow radius="13.795" width="36.18" />
-                           </effect></TextField>
+                        <TextField fx:id="newUserFirstName" GridPane.columnIndex="1" />
+                        <TextField fx:id="newUserLastName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="newUserEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="newUserAge" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                   <ProgressBar layoutX="68.0" layoutY="578.0" prefWidth="200.0" progress="0.18" />
